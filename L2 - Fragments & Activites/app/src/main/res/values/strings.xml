@@ -1,4 +1,16 @@
 <resources>
-    <string name="app_name">template</string>
-    <string name="welcome">Welcome to DAA!</string>
+    <string name="app_name">Labo 2</string>
+    <string name="welcome">Bienvenue, veuillez entrer votre nom</string>
+    <string name="editButtonText">EDITER</string>
+    <string name="saveButtonText">SAUVER</string>
+    <string name="counter">MyCounterFragment</string>
+    <string name="incrementButtonText">Increment</string>
+
+    <!-- Messages de log pour le cycle de vie des activités -->
+    <string name="log_on_create">%1$s: onCreate appelé</string>
+    <string name="log_on_start">%1$s: onStart appelé</string>
+    <string name="log_on_resume">%1$s: onResume appelé</string>
+    <string name="log_on_pause">%1$s: onPause appelé</string>
+    <string name="log_on_stop">%1$s: onStop appelé</string>
+    <string name="log_on_destroy">%1$s: onDestroy appelé</string>
 </resources>
