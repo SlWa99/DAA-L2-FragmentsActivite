@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -12,6 +13,10 @@ class EditNameActivity : AppCompatActivity() {
 
     // region Fields
     private val TAG = "EditNameActivity"
+    private lateinit var name: String
+
+    private lateinit var save_button: Button
+    private lateinit var editName_text: EditText
     // endregion
 
     // region Methods
@@ -20,11 +25,11 @@ class EditNameActivity : AppCompatActivity() {
         setContentView(R.layout.edit_name_activity)
         Log.d(TAG, R.string.log_on_create.toString())
 
-        val textField = findViewById<EditText>(R.id.nameEditText)
-        val button = findViewById<Button>(R.id.saveNameButton)
+        editName_text = findViewById<EditText>(R.id.nameEditText)
+        save_button = findViewById<Button>(R.id.saveNameButton)
 
-        button.setOnClickListener {
-            val fieldValue = textField.text.toString()
+        save_button.setOnClickListener {
+            val fieldValue = editName_text.text.toString()
             val data = Intent()
             data.putExtra(NAME_PARAMETER_KEY, fieldValue)
             setResult(RESULT_OK, data)
@@ -49,16 +54,29 @@ class EditNameActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         Log.d(TAG, R.string.log_on_pause.toString())
+        // TODO
     }
 
     override fun onStop() {
         super.onStop()
         Log.d(TAG, R.string.log_on_stop.toString())
+        // TODO
     }
 
     override fun onDestroy() {
         super.onDestroy()
         Log.d(TAG, R.string.log_on_destroy.toString())
+        // TODO
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putCharArray("NAME_VALUE", name.toCharArray())
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        name = savedInstanceState.getString("NAME_VALUE", "")
     }
     // endregion
 

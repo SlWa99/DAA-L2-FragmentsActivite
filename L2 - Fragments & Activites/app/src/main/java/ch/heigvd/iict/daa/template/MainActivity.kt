@@ -22,6 +22,9 @@ class MainActivity : AppCompatActivity() {
     private val getName = registerForActivityResult(PickNameContract()) {
         // on reçoit le résultat de la seconde activité ici
         Log.d("MainActivity", "Mon nom est $it")
+        // TODO
+        name = "$it"
+        displayed_text.text = name
     }
 
     // region Methods
@@ -36,37 +39,41 @@ class MainActivity : AppCompatActivity() {
         else displayed_text.text = name
 
         edit_button = findViewById<Button>(R.id.editButton)
-        myButton.setOnClickListener {
+        edit_button.setOnClickListener {
             getName.launch(null)
-            startActivity(i)
         }
     }
 
     override fun onStart() {
         super.onStart()
         Log.d(TAG, R.string.log_on_start.toString())
+        // TODO
         name = intent.getStringExtra(NAME_PARAMETER_KEY).toString()
     }
 
     override fun onResume() {
         super.onResume()
         Log.d(TAG, R.string.log_on_resume.toString())
+        // TODO
         name = intent.getStringExtra(NAME_PARAMETER_KEY).toString()
     }
 
     override fun onPause() {
         super.onPause()
         Log.d(TAG, R.string.log_on_pause.toString())
+        // TODO
     }
 
     override fun onStop() {
         super.onStop()
         Log.d(TAG, R.string.log_on_stop.toString())
+        // TODO
     }
 
     override fun onDestroy() {
         super.onDestroy()
         Log.d(TAG, R.string.log_on_destroy.toString())
+        // TODO
     }
     // endregion
 

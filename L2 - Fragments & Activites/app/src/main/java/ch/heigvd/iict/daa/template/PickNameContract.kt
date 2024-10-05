@@ -6,6 +6,7 @@ import android.content.Intent
 import androidx.activity.result.contract.ActivityResultContract
 
 class PickNameContract : ActivityResultContract<Void?, String?>() {
+
     override fun createIntent(context: Context, input: Void?) =
         Intent(context, EditNameActivity::class.java)
 
