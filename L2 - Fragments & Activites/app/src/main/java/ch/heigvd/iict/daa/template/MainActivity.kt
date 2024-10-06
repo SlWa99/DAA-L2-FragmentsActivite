@@ -1,22 +1,41 @@
 package ch.heigvd.iict.daa.template
 
+import NameContract
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-
 class MainActivity : AppCompatActivity() {
 
-    // region Fields
-    private val TAG = "MainActivity"
-    // endregion
 
-    // region Methods
+    private val TAG = "MainActivity"
+    private lateinit var nameTextView: TextView
+    private lateinit var editNameButton: Button
+
+    // Contrat pour récupérer le prénom depuis EditNameActivity
+    private val getName = registerForActivityResult(NameContract()) { name ->
+        Log.d(TAG, "Nom reçu: $name")
+        if (name != null) {
+            nameTextView.text = "Bienvenue $name !"
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d(TAG, getString(R.string.log_on_create))    }
+
+        nameTextView = findViewById(R.id.nameTextView)
+        editNameButton = findViewById(R.id.editNameButton)
+
+        // Lancer EditNameActivity via le contrat
+        editNameButton.setOnClickListener {
+            getName.launch(null)
+        }
+    }
 
     override fun onStart() {
         super.onStart()

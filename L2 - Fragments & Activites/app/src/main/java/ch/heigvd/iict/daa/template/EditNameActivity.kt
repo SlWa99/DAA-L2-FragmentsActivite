@@ -1,7 +1,10 @@
 package ch.heigvd.iict.daa.template
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 
 
@@ -11,12 +14,27 @@ class EditNameActivity : AppCompatActivity() {
     private val TAG = "EditNameActivity"
     // endregion
 
-    // region Methods
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        Log.d(TAG, getString(R.string.log_on_create))
-    }
+        private lateinit var editTextName: EditText
+        private lateinit var saveButton: Button
+
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            setContentView(R.layout.edit_name_activity)
+
+            editTextName = findViewById(R.id.nameEditText)
+            saveButton = findViewById(R.id.saveNameButton)
+
+            // Sauvegarder et renvoyer le prénom à MainActivity
+            saveButton.setOnClickListener {
+
+                val name = editTextName.text.toString()
+                val resultIntent = Intent().apply {
+                    putExtra("name", name)
+                }
+                setResult(RESULT_OK, resultIntent)
+                finish()  // Fermer EditNameActivity
+            }
+        }
 
     override fun onStart() {
         super.onStart()
