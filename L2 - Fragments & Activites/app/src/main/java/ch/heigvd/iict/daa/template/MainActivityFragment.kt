@@ -1,11 +1,14 @@
 package ch.heigvd.iict.daa.template
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import ch.heigvd.iict.and.labo2.fragments.ColorFragment
 import ch.heigvd.iict.and.labo2.fragments.CounterFragment
 
-class MainActivityFragment1 : AppCompatActivity() {
+class MainActivityFragment : AppCompatActivity() {
+
+    private val TAG = "MainActivityFragment"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,5 +26,25 @@ class MainActivityFragment1 : AppCompatActivity() {
                 .replace(R.id.fragmentContainerColor, ColorFragment())
                 .commit()
         }
+    }
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG, getString(R.string.log_on_start))    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG, getString(R.string.log_on_resume))    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG, getString(R.string.log_on_pause))    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, getString(R.string.log_on_stop))    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG, getString(R.string.log_on_destroy))
     }
 }

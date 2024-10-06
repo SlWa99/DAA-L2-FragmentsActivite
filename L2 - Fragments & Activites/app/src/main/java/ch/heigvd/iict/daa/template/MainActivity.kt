@@ -44,7 +44,6 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Log.d(TAG, getString(R.string.log_on_resume))
-        Toast.makeText(this, "L'activité est maintenant au premier plan", Toast.LENGTH_SHORT).show()
     }
 
     override fun onPause() {
