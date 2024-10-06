@@ -15,32 +15,28 @@ class EditNameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d(TAG, R.string.log_on_create.toString())
+        Log.d(TAG, getString(R.string.log_on_create))
     }
 
     override fun onStart() {
         super.onStart()
-        Log.d(TAG, R.string.log_on_start.toString())
-    }
+        Log.d(TAG, getString(R.string.log_on_start))    }
 
     override fun onResume() {
         super.onResume()
-        Log.d(TAG, R.string.log_on_resume.toString())
-    }
+        Log.d(TAG, getString(R.string.log_on_resume))    }
 
     override fun onPause() {
         super.onPause()
-        Log.d(TAG, R.string.log_on_pause.toString())
-    }
+        Log.d(TAG, getString(R.string.log_on_pause))    }
 
     override fun onStop() {
         super.onStop()
-        Log.d(TAG, R.string.log_on_stop.toString())
-    }
+        Log.d(TAG, getString(R.string.log_on_stop))    }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(TAG, R.string.log_on_destroy.toString())
+        Log.d(TAG, getString(R.string.log_on_destroy))
     }
     // endregion
 
