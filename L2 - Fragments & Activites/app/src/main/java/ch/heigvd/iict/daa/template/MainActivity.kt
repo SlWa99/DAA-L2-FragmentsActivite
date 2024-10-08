@@ -31,6 +31,13 @@ class MainActivity : AppCompatActivity() {
         nameTextView = findViewById(R.id.nameTextView)
         editNameButton = findViewById(R.id.editNameButton)
 
+        if (savedInstanceState != null) {
+            val savedName = savedInstanceState.getString("name")
+            if (savedName != null) {
+                nameTextView.text = savedName
+            }
+        }
+
         // Lancer EditNameActivity via le contrat
         editNameButton.setOnClickListener {
             getName.launch(null)
@@ -57,6 +64,11 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         Log.d(TAG, getString(R.string.log_on_destroy))
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("name", nameTextView.text.toString())
     }
     // endregion
 
