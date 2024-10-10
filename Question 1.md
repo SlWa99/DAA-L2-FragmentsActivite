@@ -17,23 +17,18 @@ Veuillez réaliser un diagramme des changements d’état des deux Activités po
 
 ### Réponse 2.1:
 
-![scenario1](scenario1.png)
+=> Voir l'image __scenario1.png__ dans le .zip.
+
+## Question 2.2:
 
 
 \- L’utilisateur ouvre l’application en mode portrait, clique sur le bouton éditer, bascule en mode paysage, renseigne son prénom et sauve.
 
 ### Réponse 2.2:
 
-Le diagramme est en deux images car il est long.
+=> Voir les images __scenario2.1png__ et __scenario2.2-png__ dans le .zip.
 
-#### partie 1:
-
-![scenario2.1](scenario2.1.png)
-
-
-
-#### partie 2
-![scenario2.2](scenario2.2.png)
+Le diagramme est en deux images car il est très grand.
 
 
 ## Question 3:
