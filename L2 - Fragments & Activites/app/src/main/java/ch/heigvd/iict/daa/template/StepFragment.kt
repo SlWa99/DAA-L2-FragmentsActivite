@@ -22,7 +22,10 @@ class StepFragment : Fragment() {
         fun newInstance(stepNumber: Int): StepFragment {
             val fragment = StepFragment()  // Création d'une nouvelle instance du fragment
             val args = Bundle()  // Création d'un objet Bundle pour stocker les arguments
-            args.putInt(ARG_STEP_NUMBER, stepNumber)  // Ajout de l'argument (numéro d'étape) au bundle avec la clé définie
+            args.putInt(
+                ARG_STEP_NUMBER,
+                stepNumber
+            )  // Ajout de l'argument (numéro d'étape) au bundle avec la clé définie
             fragment.arguments = args  // Affectation du bundle d'arguments au fragment
             return fragment  // Retourne l'instance du fragment initialisée avec l'argument
         }

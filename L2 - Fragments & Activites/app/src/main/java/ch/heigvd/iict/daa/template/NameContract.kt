@@ -1,8 +1,9 @@
+package ch.heigvd.iict.daa.template
+
 import android.content.Context
 import android.content.Intent
 import androidx.activity.result.contract.ActivityResultContract
 import androidx.appcompat.app.AppCompatActivity
-import ch.heigvd.iict.daa.template.EditNameActivity
 
 class NameContract : ActivityResultContract<Void?, String?>() {
 

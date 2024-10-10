@@ -1,15 +1,12 @@
 package ch.heigvd.iict.daa.template
 
-import NameContract
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
-
 
     private val TAG = "MainActivity"
     private lateinit var nameTextView: TextView
@@ -74,6 +71,4 @@ class MainActivity : AppCompatActivity() {
 
         Log.d(TAG, getString(R.string.log_on_save_instance_state))
     }
-    // endregion
-
 }

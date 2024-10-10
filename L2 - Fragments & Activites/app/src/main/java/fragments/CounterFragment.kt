@@ -1,4 +1,4 @@
-package ch.heigvd.iict.and.labo2.fragments
+package fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

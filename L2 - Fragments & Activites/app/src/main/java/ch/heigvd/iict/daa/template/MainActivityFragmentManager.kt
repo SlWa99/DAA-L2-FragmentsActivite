@@ -18,11 +18,6 @@ class MainActivityFragmentManager : AppCompatActivity() {
         setContentView(R.layout.activity_main_fragment_manipulation3)  // Utilise le layout défini
         Log.d(TAG, getString(R.string.log_on_create_enter))
 
-        // Au démarrage, afficher le premier fragment si aucune sauvegarde d'état n'existe
-//        if (savedInstanceState == null) {
-//            showStepFragment(currentStep)
-//        }
-
         if (savedInstanceState != null) {
             val savedCurrentStep = savedInstanceState.getInt("currentStep")
             currentStep = savedCurrentStep
@@ -30,13 +25,12 @@ class MainActivityFragmentManager : AppCompatActivity() {
 
         showStepFragment(currentStep)
 
-        // Récupérer les boutons et définir leurs comportements
         findViewById<Button>(R.id.button_previous).setOnClickListener {
             if (currentStep > 1) {
-                currentStep--  // Aller à l'étape précédente
+                currentStep--
                 showStepFragment(currentStep)
             } else {
-                finish()  // Fermer l'activité si aucune étape précédente
+                finish()
             }
         }
 
@@ -46,7 +40,7 @@ class MainActivityFragmentManager : AppCompatActivity() {
 
         findViewById<Button>(R.id.button_next).setOnClickListener {
             if (currentStep < totalSteps) {
-                currentStep++  // Aller à l'étape suivante
+                currentStep++
                 showStepFragment(currentStep)
             }
         }

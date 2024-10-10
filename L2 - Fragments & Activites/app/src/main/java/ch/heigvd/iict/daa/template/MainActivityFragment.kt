@@ -3,8 +3,8 @@ package ch.heigvd.iict.daa.template
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import ch.heigvd.iict.and.labo2.fragments.ColorFragment
-import ch.heigvd.iict.and.labo2.fragments.CounterFragment
+import fragments.ColorFragment
+import fragments.CounterFragment
 
 class MainActivityFragment : AppCompatActivity() {
 
@@ -29,6 +29,7 @@ class MainActivityFragment : AppCompatActivity() {
         }
         Log.d(TAG, getString(R.string.log_on_create_exit))
     }
+
     override fun onStart() {
         super.onStart()
         Log.d(TAG, getString(R.string.log_on_start))    }
