@@ -13,6 +13,7 @@ class MainActivityFragment : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_fragment)
+        Log.d(TAG, getString(R.string.log_on_create_enter))
 
         // Vérifie si l'activité a déjà été créée (pour ne pas recréer les fragments après une rotation par exemple)
         if (savedInstanceState == null) {
@@ -26,6 +27,7 @@ class MainActivityFragment : AppCompatActivity() {
                 .replace(R.id.fragmentContainerColor, ColorFragment())
                 .commit()
         }
+        Log.d(TAG, getString(R.string.log_on_create_exit))
     }
     override fun onStart() {
         super.onStart()

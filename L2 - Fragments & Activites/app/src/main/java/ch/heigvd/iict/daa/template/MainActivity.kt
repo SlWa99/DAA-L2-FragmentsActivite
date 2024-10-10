@@ -24,9 +24,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.d(TAG, getString(R.string.log_on_create_enter))
 
         nameTextView = findViewById(R.id.nameTextView)
         editNameButton = findViewById(R.id.editNameButton)
@@ -42,6 +42,8 @@ class MainActivity : AppCompatActivity() {
         editNameButton.setOnClickListener {
             getName.launch(null)
         }
+
+        Log.d(TAG, getString(R.string.log_on_create_exit))
     }
 
     override fun onStart() {
@@ -69,6 +71,8 @@ class MainActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putString("name", nameTextView.text.toString())
+
+        Log.d(TAG, getString(R.string.log_on_save_instance_state))
     }
     // endregion
 

@@ -7,12 +7,14 @@
     <string name="incrementButtonText">Increment</string>
 
     <!-- Messages de log pour le cycle de vie des activités -->
-    <string name="log_on_create">onCreate appelé</string>
+    <string name="log_on_create_enter">onCreate appelé entrée</string>
+    <string name="log_on_create_exit">onCreate appelé sotie</string>
     <string name="log_on_start">onStart appelé</string>
     <string name="log_on_resume">onResume appelé</string>
     <string name="log_on_pause">onPause appelé</string>
     <string name="log_on_stop">onStop appelé</string>
     <string name="log_on_destroy">onDestroy appelé</string>
+    <string name="log_on_save_instance_state">SaveInstanceState appelé</string>
 
     <string name="Précédent">Précédent</string>
     <string name="Fermer">Fermer</string>

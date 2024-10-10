@@ -16,6 +16,7 @@ class MainActivityFragmentManager : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_fragment_manipulation3)  // Utilise le layout défini
+        Log.d(TAG, getString(R.string.log_on_create_enter))
 
         // Au démarrage, afficher le premier fragment si aucune sauvegarde d'état n'existe
 //        if (savedInstanceState == null) {
@@ -49,6 +50,7 @@ class MainActivityFragmentManager : AppCompatActivity() {
                 showStepFragment(currentStep)
             }
         }
+        Log.d(TAG, getString(R.string.log_on_create_exit))
     }
 
     // Fonction pour afficher le fragment correspondant à l'étape actuelle
@@ -82,5 +84,6 @@ class MainActivityFragmentManager : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putInt("currentStep", currentStep)
+        Log.d(TAG, getString(R.string.log_on_save_instance_state))
     }
 }

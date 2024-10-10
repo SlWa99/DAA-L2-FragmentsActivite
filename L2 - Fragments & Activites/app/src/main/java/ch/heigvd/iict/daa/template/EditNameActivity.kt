@@ -20,6 +20,7 @@ class EditNameActivity : AppCompatActivity() {
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.edit_name_activity)
+            Log.d(TAG, getString(R.string.log_on_create_enter))
 
             editTextName = findViewById(R.id.nameEditText)
             saveButton = findViewById(R.id.saveNameButton)
@@ -34,6 +35,7 @@ class EditNameActivity : AppCompatActivity() {
                 setResult(RESULT_OK, resultIntent)
                 finish()  // Fermer EditNameActivity
             }
+            Log.d(TAG, getString(R.string.log_on_create_exit))
         }
 
     override fun onStart() {
